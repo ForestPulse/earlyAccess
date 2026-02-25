@@ -15,6 +15,7 @@ for the following products:
 | Tree Species | [Dominant tree species](layer_descriptions\ea_dominant_tree_species.md)           | 400 MB   | 1 band with category values 1-14 for each type                     |
 |              | [Tree species fractions](layer_descriptions\ea_tree_species_fractions.md)          | 4 GB     | 14 bands, one per each type. Sum across bands for any pixel is 100 |
 |              | [Tree species HSV classification](layer_descriptions\ea_tree_species_fractions_HSV.md) | 2 GB     | 3 bands                                                            |
+
 _(follow the links for a more detailed product description)_
 
 Services can be accessed via GIS (e.g. QGIS or ArcGIS) or via direct service requests (`GetCapabilities`, `GetMap`, etc. either by using curl or in a web browser). **When asked for credentials, log in with the user and password combination that was given to you previously.**
