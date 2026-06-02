@@ -11,10 +11,10 @@ for the following products:
 
 | Work Package           | Product                         | ~Filesize | Comments                                                           |
 | ------------ | ------------------------------- | -------- | ------------------------------------------------------------------ |
-| [Tree Mask](layer_descriptions\ea_tree_mask.md)    |                                 | 200 MB   | 1 band, binary (0 = Non-Forest, 1 = Forest)                        |
-| Tree Species | [Dominant tree species](layer_descriptions\ea_dominant_tree_species.md)           | 400 MB   | 1 band with category values 1-14 for each type                     |
-|              | [Tree species fractions](layer_descriptions\ea_tree_species_fractions.md)          | 4 GB     | 14 bands, one per each type. Sum across bands for any pixel is 100 |
-|              | [Tree species HSV classification](layer_descriptions\ea_tree_species_fractions_HSV.md) | 2 GB     | 3 bands                                                            |
+| [Tree Mask](layer_descriptions/ea_tree_mask.md)    |                                 | 200 MB   | 1 band, binary (0 = Non-Forest, 1 = Forest)                        |
+| Tree Species | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)           | 400 MB   | 1 band with category values 1-14 for each type                     |
+|              | [Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)          | 4 GB     | 14 bands, one per each type. Sum across bands for any pixel is 100 |
+|              | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md) | 2 GB     | 3 bands                                                            |
 
 _(follow the links for a more detailed product description)_
 
@@ -38,11 +38,11 @@ Services can be accessed via GIS (e.g. QGIS or ArcGIS) or via direct service req
 
 ## Product previews
 
-| [Tree Mask](layer_descriptions\ea_tree_mask.md)            | [Dominant tree species](layer_descriptions\ea_dominant_tree_species.md)    | [Tree species HSV classification](layer_descriptions\ea_tree_species_fractions_HSV.md)  | 
+| [Tree Mask](layer_descriptions/ea_tree_mask.md)            | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)    | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md)  | 
 | ------------ | ------------------------------- | -------- | 
 | <img src="images\tree_mask-DE.png" style="width:200px; height:auto;">| <img src="images\tree_species_dominant.cog.png" style="width:200px; height:auto;">| <img src="images\tree_species_hsv.cog.png" style="width:200px; height:auto;">| 
 
-**[Tree species fractions](layer_descriptions\ea_tree_species_fractions.md)**
+**[Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)**
 | 01 - Spruce           | 02 - Pine                         | 03 - Fir | 
 | ------------ | ------------------------------- | -------- | 
 | <img src="images\tree_species_fractions-01-spruce.cog.png" style="width:200px; height:auto;">| <img src="images\tree_species_fractions-02-pine.cog.png" style="width:200px; height:auto;">| <img src="images\tree_species_fractions-03-fir.cog.png" style="width:200px; height:auto;">| 
