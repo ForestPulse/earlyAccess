@@ -72,7 +72,7 @@ Die folgenden Baumartengruppen/Klassen und zugehörige Baumarten sind enthalten:
     <td>Bergahorn (<i>Acer pseudoplatanus</i>)</td>
   </tr>
   <tr>
-    <td>Feldahorn  (<i>Acer campestres</i>)</td>
+    <td>Feldahorn  (<i>Acer campestre</i>)</td>
   </tr>
 
   <tr>
