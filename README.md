@@ -15,6 +15,8 @@ for the following products:
 | Tree Species | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)           | 400 MB   | 1 band with category values 1-14 for each type                     |
 |              | [Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)          | 4 GB     | 14 bands, one per each type. Sum across bands for any pixel is 100 |
 |              | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md) | 2 GB     | 3 bands                                                            |
+| [Forest Structure](/layer_descriptions/ea_forest_structure.md) |            | 2.7 GB     | 6 bands (Überschirmungsgrad, Bestandesoberhöhe, Bestandesschichtung, Bestandesvorrat, Biomasse, Grundfläche), for the state of Thuringia |
+
 
 _(follow the links for a more detailed product description)_
 
@@ -49,4 +51,4 @@ Services can be accessed via GIS (e.g. QGIS or ArcGIS) or via direct service req
 
 
 ## Feedback & issues
-Please file any potential issues that you have with the products on this repository. Alternatively, feel free to send any inquiries by mail.
+Please file any potential issues that you have with the products on this repository. Alternatively, feel free to send any inquiries by mail to jara@uni-trier.de
