@@ -46,7 +46,7 @@ Die folgenden Baumartengruppen/Klassen und zugehörige Baumarten sind enthalten:
     <td>Europäische Lärche (<i>Larix decidua</i>)</td>
   </tr>
   <tr>
-    <td>Japanische Lärche (<i>Larix kaempferis</i>)</td>
+    <td>Japanische Lärche (<i>Larix kaempferi</i>)</td>
   </tr>
 
 
@@ -63,7 +63,7 @@ Die folgenden Baumartengruppen/Klassen und zugehörige Baumarten sind enthalten:
     <td>Stieleiche (<i>Quercus robur</i>)</td>
   </tr>
   <tr>
-    <td>Traubeneiche (<i>Quercus petraeas</i>)</td>
+    <td>Traubeneiche (<i>Quercus petraea</i>)</td>
   </tr>
 
   <tr>
