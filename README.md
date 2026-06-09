@@ -1,42 +1,44 @@
 # ForestPulse early access
 
-## Services & Products
-The following services are currently available from the **Base URL**
+## Dienste & Produkte
+Die folgenden Dienste sind derzeit über die **Basis-URL** verfügbar:
 
 * WMS (.../earlyAccess/wms)
 * WMTS (.../earlyAccess/gwc/service/wmts)
 * WCS (.../earlyAccess/wcs)
 
-for the following products: 
+für die folgenden Produkte:
 
-| Work Package           | Product                         | ~Filesize | Comments                                                           |
+| Arbeitspaket           | Produkte                         | ~Dateigröße | Kommentare                                                           |
 | ------------ | ------------------------------- | -------- | ------------------------------------------------------------------ |
-| [Tree Mask](layer_descriptions/ea_tree_mask.md)    |                                 | 200 MB   | 1 band, binary (0 = Non-Forest, 1 = Forest)                        |
-| Tree Species | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)           | 400 MB   | 1 band with category values 1-14 for each type                     |
-|              | [Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)          | 4 GB     | 14 bands, one per each type. Sum across bands for any pixel is 100 |
-|              | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md) | 2 GB     | 3 bands                                                            |
-| [Forest Structure](/layer_descriptions/ea_forest_structure.md) |            | 2.7 GB     | 6 bands (Überschirmungsgrad, Bestandesoberhöhe, Bestandesschichtung, Bestandesvorrat, Biomasse, Grundfläche), for the state of Thuringia |
+| [Tree Mask](layer_descriptions/ea_tree_mask.md)    |                                 | 200 MB   | 1 band, binär (0 = Nicht-Wald, 1 = Wald)                        |
+| Tree Species | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)           | 400 MB   | 1 Layer mit Kategoriewerten von 1 bis 14 für jeden Typ                     |
+|              | [Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)          | 4 GB     | 14 Layers, jeweils eine pro Typ. Die Summe über alle Layer in jedem Pixel beträgt 100 |
+|              | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md) | 2 GB     | 3 Layers                                                            |
+| [Forest Structure](/layer_descriptions/ea_forest_structure.md) |            | 2.7 GB     | 6 Layers (Überschirmungsgrad, Bestandesoberhöhe, Bestandesschichtung, Bestandesvorrat, Biomasse, Grundfläche), für den Bundesland Thüringen |
+
+_(Klicken Sie auf die Links, um eine ausführlichere Produktbeschreibung zu erhalten)_
 
 
-_(follow the links for a more detailed product description)_
+Der Zugriff auf die Dienste ist über GIS-Anwendungen (z. B. QGIS oder ArcGIS) oder über direkte Dienstaufrufe (`GetCapabilities`, `GetMap` usw., entweder mit `curl` oder in einem Webbrowser) möglich. **Wenn Sie zur Eingabe von Anmeldedaten aufgefordert werden, melden Sie sich mit dem Benutzernamen und dem Passwort an, die Sie zuvor erhalten haben.**
 
-Services can be accessed via GIS (e.g. QGIS or ArcGIS) or via direct service requests (`GetCapabilities`, `GetMap`, etc. either by using curl or in a web browser). **When asked for credentials, log in with the user and password combination that was given to you previously.**
+## Nutzung der Dienste
 
-## Using the services
+* Da wir direkt eine IP-Adresse verwenden, sind für https **SSL selbstsignierte Zertifikate** erforderlich. Dies führt zu Meldungen, in denen Sie aufgefordert werden, dies als Ausnahme zu akzeptieren, z. B.:
+   * In Firefox müssen Sie auf „Mehr“ oder „Erweitert“ klicken und die Ausnahme akzeptieren.
+   * Bei der ersten Verbindung über QGIS gibt es eine Einstellung, um das selbstsignierte Zertifikat zu ignorieren
 
-* As we are using directly an IP, https required **self-signed certificates**. This will prompt messages to accept is as an exception, e.g:
-   * in Firefox one has to click "more" or "advanced" and accept it
-   * when first connecting via QGIS there will be a setting to overlook the self-signed certificate
+* Jedes Produkt verfügt über einen Standardstil, der bei WMS- und WMTS-Produkten direkt angewendet wird. Ergänzende Stile wurden in dieses Repository aufgenommen, um in WCS-Produkten verwendet zu werden
 
-* Each product has a default style, which is directly applied in the case of WMS and WMTS products. Complementary styles have been included on this repository to be used in WCS products
+* Das Produkt „Tree Species Fractions“ enthält 14 Stile, einen für jedes Layer _(01 – Fichte, 02 – Kiefer, 03 – Tanne, 04 – Douglasie, 05 – Lärche, 06 – Buche, 07 – Eiche, 08 – Ahorn, 09 - Birke, 10 - Erle, 11 - Pappel, 12 - Sonstige, 13 - Boden, 14 - Schatten)_
+   * Diese Stile können bei WMTS-Diensten direkt geladen werden
+   * Auf benutzerdefinierte Stile für WMS kann über den Datenquellen-Manager zugegriffen werden (Tastenkombination `Strg+L` in QGIS). Beachten Sie, dass das Laden dieses Vorgangs bei einigen QGIS-Versionen einige Zeit in Anspruch nehmen kann.
 
-* Tree Species Fractions product containts 14 styles, one for each band _(01 - Spruce, 02 - Pine, 03 - Fir, 04 - Douglas Fir, 05 - Larch, 06 - Beech, 07 - Oak, 08 - Maple, 09 - Birch, 10 - Alder, 11 - Poplar, 12 - Other, 13 - Ground, 14 - Shadow)_
-   * These styles can be loaded directly in the case of WMTS services
-   * Custom styles for WMS can be accessed via the Data Source Manager (`Ctrl+L` shortcut on QGIS). Note that this operation may take time to load on some QGIS versions.
+* Ebenso enthält das Produkt „Forest Structure“ 6 Stile _(01 – CanopyCover, 02 – TopHeight, 03 – VCI, 04 – Volume, 05 – Biomass, 06 – BasalArea)_
 
-* Legends for the WMTS products are not properly formatted due limitations on how they are parsed by the service and QGIS. As such, it is recommended to ignore them. In the case of the WMS product, an image will be loaded as legend.
+* In einigen Fällen werden die Legenden für WMTS-Produkte aufgrund von Verarbeitungsbeschränkungen seitens des Dienstes und von QGIS nicht korrekt formatiert. Für einige Fälle wurde bereits eine Umgehungslösung eingerichtet.
 
-* Password management is outside the scope of what we currently can do, so please use your given password and contact us if a reset is needed.
+* Die Passwortverwaltung liegt außerhalb unseres derzeitigen Zuständigkeitsbereichs. Bitte verwenden Sie daher das Ihnen zugewiesene Passwort und kontaktieren Sie uns, falls eine Zurücksetzung erforderlich ist.
 
 ## Product previews
 
@@ -50,5 +52,5 @@ Services can be accessed via GIS (e.g. QGIS or ArcGIS) or via direct service req
 | <img src="images\tree_species_fractions-01-spruce.cog.png" style="width:200px; height:auto;">| <img src="images\tree_species_fractions-02-pine.cog.png" style="width:200px; height:auto;">| <img src="images\tree_species_fractions-03-fir.cog.png" style="width:200px; height:auto;">| 
 
 
-## Feedback & issues
-Please file any potential issues that you have with the products on this repository. Alternatively, feel free to send any inquiries by mail to jara@uni-trier.de
+## Feedback & Probleme
+Bitte melden Sie alle Probleme, die Sie mit den Produkten in diesem Repository haben, über dieses Repository. Alternativ können Sie Ihre Anfragen auch gerne per E-Mail an jara@uni-trier.de senden.
