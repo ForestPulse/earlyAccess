@@ -76,20 +76,19 @@ Die folgenden Baumartengruppen/Klassen und zugehörige Baumarten sind enthalten:
   </tr>
 
   <tr>
-    <td>Erle</td>
-    <td>9</td>
-    <td>Schwarzerle  (<i>Alnus glutinosa</i>)</td>
-  </tr>
-
-  <tr>
     <td rowspan="2">Birke</td>
-    <td rowspan="2">10</td>
+    <td rowspan="2">9</td>
     <td>Gemeine Birke (<i>Betula pendula</i>)</td>
   </tr>
   <tr>
     <td>Moorbirke (<i>Betula pubescens</i>)</td>
   </tr>
 
+  <tr>
+    <td>Erle</td>
+    <td>10</td>
+    <td>Schwarzerle  (<i>Alnus glutinosa</i>)</td>
+  </tr>
   <tr>
     <td rowspan="2">Pappel</td>
     <td rowspan="2">11</td>
