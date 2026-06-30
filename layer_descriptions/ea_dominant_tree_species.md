@@ -74,18 +74,18 @@ Der Layer ist als klassifiziertes Raster umgesetzt. Jeder Pixel enthält einen g
   </tr>
 
   <tr>
-    <td>Erle</td>
-    <td>9</td>
-    <td>Schwarzerle  (<i>Alnus glutinosa</i>)</td>
-  </tr>
-
-  <tr>
     <td rowspan="2">Birke</td>
-    <td rowspan="2">10</td>
+    <td rowspan="2">9</td>
     <td>Gemeine Birke (<i>Betula pendula</i>)</td>
   </tr>
   <tr>
     <td>Moorbirke (<i>Betula pubescens</i>)</td>
+  </tr>
+
+<tr>
+    <td>Erle</td>
+    <td>10</td>
+    <td>Schwarzerle  (<i>Alnus glutinosa</i>)</td>
   </tr>
 
   <tr>
@@ -114,14 +114,14 @@ Der Layer ist als klassifiziertes Raster umgesetzt. Jeder Pixel enthält einen g
 
   <tr>
     <td rowspan="2">Hintergrund</td>
-    <td>Schatten</td>
+    <td>Boden</td>
     <td>13</td>
-    <td>Spektral stark durch Schatten beeinflusst</td>
+    <td>Spektral stark durch Boden beeinflusst</td>
   </tr>
   <tr>
-    <td>Boden</td>
+    <td>Schatten</td>
     <td>14</td>
-    <td>Spektral stark durch Boden beeinflusst</td>
+    <td>Spektral stark durch Schatten beeinflusst</td>
   </tr>
 </table>
 
