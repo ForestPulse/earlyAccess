@@ -15,7 +15,7 @@ für die folgenden Produkte:
 | Tree Species | [Dominant tree species](layer_descriptions/ea_dominant_tree_species.md)           | 400 MB   | 1 Layer mit Kategoriewerten von 1 bis 14 für jeden Typ                     |
 |              | [Tree species fractions](layer_descriptions/ea_tree_species_fractions.md)          | 4 GB     | 14 Layers, jeweils eine pro Typ. Die Summe über alle Layer in jedem Pixel beträgt 100 |
 |              | [Tree species HSV classification](layer_descriptions/ea_tree_species_fractions_HSV.md) | 2 GB     | 3 Layers                                                            |
-| [Forest Structure](/layer_descriptions/ea_forest_structure.md) |            | 2.7 GB     | 6 Layers (Überschirmungsgrad, Bestandesoberhöhe, Bestandesschichtung, Bestandesvorrat, Biomasse, Grundfläche), für den Bundesland Thüringen |
+| [Forest Structure](/layer_descriptions/ea_forest_structure.md) |            | 2.7 GB     | 6 Layer (Überschirmungsgrad, Bestandesoberhöhe, Bestandesschichtung, Bestandesvorrat, Biomasse, Grundfläche), für die Bundesländer Thüringen und Rheinland-Pfalz |
 
 _(Klicken Sie auf die Links, um eine ausführlichere Produktbeschreibung zu erhalten)_
 
