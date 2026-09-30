@@ -30,7 +30,7 @@ Ein VCI nahe 1 bedeutet, dass die Punkte gleichmäßig über alle Höhenschichte
 
 ## Waldstruktur – 04 Bestandesvorrat
 
-Der Bestandesvorrat ist das Volumen der Stämme lebender Bäume, auf einen Hektar hochgerechnet. Er wird berechnet mittels des flächenbasierten Ansatzes auf 10m-Pixeln durch eine nichtlineare Regression der Form
+Der Bestandesvorrat ist der lebende, stehende Holzvorrat an Derbolz (> 7cm) pro Hektar Holzboden. Er wird berechnet mittels des flächenbasierten Ansatzes auf 10m-Pixeln durch eine nichtlineare Regression der Form
 
 $$V = a \cdot h ^b \cdot \rho^c$$
 
@@ -73,9 +73,10 @@ Die Einheit ist Quadratmeter pro Hektar (m²/ha).
 ## Zur Genauigkeit der modellierten Variablen
 
 Der Vergleich der modellierten Variablen (Volumen, Biomasse, Bestandesgrundfläche) aus dem Produkt mit den Daten der Bundeswaldinventur zeigt, dass die modellierten Werte für Volumen und Biomasse mit weniger Unsicherheit behaftet sind als für Bestandesgrundlächen.
-In den untenstehenden Grafiken werden für Thüringen (TH) und Rheinland-Pfalz (RLP) der jeweilige Vergleich dargestellt, und einige Kennzahlen angegenben, darunter
+In den untenstehenden Grafiken werden für Thüringen (TH) und Rheinland-Pfalz (RLP) der jeweilige Vergleich dargestellt, und einige Kennzahlen angegeben, darunter
 das Bestimmtheitsmaß (R²) einer linearen Regression (blaue linie); die mit dem Mittelwert normalisierte Wurzel aus dem mittleren quadratischen Fehler (relative root mean squared error, RRMSE); der Schätzfehler (Bias); und der mittlere Betrag des Fehlers (mean absolute error, MAE). 
-Rot dargestellte Punkte wurden nicht berücksichtigt, aufgrund der Diskrepanz zwischen BWI-Aufnahme und Lidar-Daten, welche in der Regel dadurch entsteht, dass zwischen BWI-Aufnahme und Lidar-Aufnahme Zeit verstrichen ist, in welcher eine Störung des Bestandes auftrat.
+Rot dargestellte Punkte wurden nicht berücksichtigt, aufgrund der Diskre
+panz zwischen BWI-Aufnahme und ALS-Daten, welche in der Regel dadurch entsteht, dass zwischen beiden Aufnahmezeitpunkten Änderungen des Bestandes z.B. durch Störungen und oder Management aufgetreten sind.
 
 
  <img src="plot_metrics_prod_TH_vs_bwi_wo_bad_quality.png" style="width:750px; height:auto;">
