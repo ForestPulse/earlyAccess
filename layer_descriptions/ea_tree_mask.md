@@ -1,7 +1,11 @@
 # Baum/Wald Maske
 
-In diesem Layer werden zwei deutschlandweite Datensätze miteinander überlagert dargestellt: 1. eine Waldmaske auf Basis des Digitalen Landschaftsmodells (Basis-DLM) des Bundesamtes für Kartographie und Geodäsie (BKG) sowie 2. eine satellitengestützte Baumklassifikation auf Basis von Sentinel-2-Zeitreihen.
-Ziel des Layers ist es, sowohl offiziell ausgewiesene Waldflächen als auch weitere baumbestandene Flächen abzubilden, die nicht als Wald im amtlichen Sinne gelten.
+In diesem Layer werden zwei deutschlandweite Datensätze miteinander überlagert dargestellt:
+
+1. Waldmaske auf Basis des Digitalen Landschaftsmodells (Basis-DLM) des Bundesamtes für Kartographie und Geodäsie (BKG)
+2. satellitengestützte Baumklassifikation auf Basis von Sentinel-2-Zeitreihen
+   
+Durch die Überlagerung werden in dem Layers, sowohl offiziell ausgewiesene Waldflächen als auch weitere mit Bäumen bestandene Flächen abgebildet, die nicht als Wald im amtlichen Sinne gelten.
 
 ## Waldmaske auf Basis des Digitalen Landschaftsmodells (Basis-DLM)
 
