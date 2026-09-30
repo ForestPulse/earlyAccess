@@ -148,8 +148,8 @@
         <stdDevFactor>2</stdDevFactor>
       </minMaxOrigin>
       <colorPalette>
-        <paletteEntry label="Non-Treed" value="0" color="#030000" alpha="255"/>
-        <paletteEntry label="Treed" value="1" color="#0db816" alpha="255"/>
+        <paletteEntry label="Non-Forest/Non-Tree" value="0" color="#030000" alpha="255"/>
+        <paletteEntry label="Forest / Treed" value="1" color="#0db816" alpha="255"/>
       </colorPalette>
       <colorramp type="randomcolors" name="[source]">
         <Option/>
