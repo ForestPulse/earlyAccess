@@ -1,18 +1,12 @@
-## Waldstruktur - Bedeckungsgrad
+Sämtliche hier aufgeführten Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (ALS) erstellt werden. Da die Daten der deutschlandweiten ALS-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten der Landesvermessung erstellt, und sind bisher auf Thüringen und Rheinland-Pflaz beschränkt.
 
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur - 01 Kronenüberschirmung
 
 Dieser Layer beschreibt den Anteil des Pixels, der von Baumkronen oder anderer Vegetation mit Höhe über 2 m überschirmt ist.
 
 Zuerst wurde ein Bestandeshöhenmodell (canopy height model, CHM) berechnet. Dies ist ein Raster mit der Auflösung 50 cm, das den höchsten Punkt der Lidar-Punktwolke in jeder Rasterzelle ermittelt. Dabei wird eine Ausleuchtungsbreite des Laserstrahls mit einem Radius von 25 cm unterstellt. Der Bedeckungsgrad wird dann berechnet als der Anteil der 50 cm-Rasterzellen, deren Wert 2 m übersteigt.
 
-## Waldstruktur – Bestandesoberhöhe
-
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur – 02 Bestandesoberhöhe
 
 Für jedes 10x10m Pixel wird aus den Höhen aller Punkte der Lidar-Punktwolke das 95. Perzentil berechnet. 
 
@@ -22,11 +16,7 @@ Dieser Höhenwert ist stark korreliert mit im Wald gemessenen Höhenmetriken wie
 
 Die Einheit ist Meter (m).
 
-## Waldstruktur - Vertical Complexity Index (Bestandesschichtung)
-
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur - 03 Vertical Complexity Index (Bestandesschichtung)
 
 Der Index der vertikalen Komplexität (Vertical Complexity Index, VCI) ist ein Maß für die Gleichmäßigkeit der vertikalen Verteilung der Punkte. Er wird berechnet als Shannon-Wiener-Index über 60 Höhenklassen von je einem Meter:
 
@@ -38,11 +28,7 @@ wobei $p_i$ der relative Anteil der Punkte mit einer Höhe zwischen $i-1$ und $i
 
 Ein VCI nahe 1 bedeutet, dass die Punkte gleichmäßig über alle Höhenschichten verteilt sind, während ein VCI nahe 0 bedeutet, dass sich alle Punkte auf eine oder wenige Höhenschichten konzentrieren. In der Praxis kann ein hoher VCI sowohl auf eine höhere Gesamthöhe des Bestandes hindeuten, als auch auf eine komplexere Bestandesschichtung z.B. aus Unterstand und Oberstand.
 
-## Waldstruktur – Volumen (Bestandesvorrat)
-
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur – 04 Bestandesvorrat
 
 Der Bestandesvorrat ist das Volumen der Stämme lebender Bäume, auf einen Hektar hochgerechnet. Er wird berechnet mittels des flächenbasierten Ansatzes auf 10m-Pixeln durch eine nichtlineare Regression der Form
 
@@ -54,13 +40,9 @@ Mit Daten der Bundeswaldinventur (BWI) wurde die Modellparameter wie folgt kalib
 
 $$a = 3.4838,    b = 1.3921,    c = -0.76431$$
 
-Die Einheit ist Festmeter pro Hektar (m³/ha).
+Die Einheit ist Vorratsfestmeter pro Hektar (Vfm/ha).
 
-## Waldstruktur – Biomasse 
-
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur – 05 Bestandesbiomasse 
 
 Es handelt sich um die lebende oberirdische Biomasse, auf einen Hektar hochgerechnet. Sie wird berechnet mittels des flächenbasierten Ansatzes auf 10m-Pixeln durch eine nichtlineare Regression der Form
 
@@ -74,11 +56,7 @@ $$ a = 4.988,    b = 1.343,    c = 0.3047$$
 
 Die Einheit ist Tonne pro Hektar (t/ha).
 
-## Waldstruktur – Bestandesgrundfläche
-
-Dieser Layer gehört zur Gruppe der Waldstruktur-Produkte, die auf Basis von flugzeuggestütztem Laserscanning (Lidar) erstellt werden. Da die Daten der deutschlandweiten Lidar-Kampagne (noch) nicht vorliegen, wurden diese Produkte auf Basis der Daten aus Thüringen erstellt, und sind bisher auf Thüringen beschränkt.
-
-*Wie wird das Produkt berechnet?*
+## Waldstruktur – 06 Bestandesgrundfläche
 
 Die Bestandesgrundfläche ist die Querschnittsfläche der Stämme aller Bäume in Brusthöhe (1,3 m), auf einen Hektar hochgerechnet. Sie wird berechnet mittels des flächenbasierten Ansatzes auf 10m-Pixeln durch eine nichtlineare Regression der Form
 
