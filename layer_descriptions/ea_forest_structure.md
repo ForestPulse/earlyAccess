@@ -6,6 +6,8 @@ Dieser Layer beschreibt den Anteil des Pixels, der von Baumkronen oder anderer V
 
 Zuerst wurde ein Bestandeshöhenmodell (canopy height model, CHM) berechnet. Dies ist ein Raster mit der Auflösung 50 cm, das den höchsten Punkt der Lidar-Punktwolke in jeder Rasterzelle ermittelt. Dabei wird eine Ausleuchtungsbreite des Laserstrahls mit einem Radius von 25 cm unterstellt. Der Bedeckungsgrad wird dann berechnet als der Anteil der 50 cm-Rasterzellen, deren Wert 2 m übersteigt.
 
+Die Einheit ist Prozent (%).
+
 ## Waldstruktur – 02 Bestandesoberhöhe
 
 Für jedes 10x10m Pixel wird aus den Höhen aller Punkte der Lidar-Punktwolke das 95. Perzentil berechnet. 
@@ -14,19 +16,17 @@ Für jedes 10x10m Pixel wird aus den Höhen aller Punkte der Lidar-Punktwolke da
 
 Dieser Höhenwert ist stark korreliert mit im Wald gemessenen Höhenmetriken wie H100. Durch die Wahl des 95. Perzentils wird verhindert, dass eventuelle Störsignale in der Punktwolke die Metrik stark beeinflussen.
 
-Die Einheit ist Meter (m).
+Die Einheit ist Meter (m). Alle Werte sind auf ganze Meter gerundet.
 
-## Waldstruktur - 03 Vertical Complexity Index (Bestandesschichtung)
+## Waldstruktur - 03 Mittlere Höhe
 
-Der Index der vertikalen Komplexität (Vertical Complexity Index, VCI) ist ein Maß für die Gleichmäßigkeit der vertikalen Verteilung der Punkte. Er wird berechnet als Shannon-Wiener-Index über 60 Höhenklassen von je einem Meter:
+Aus dem Bestandeshöhenmodell (CHM), das auch zur Berechnung der Kronenüberschirmung verwendet wurde, wird der Mittelwert der Höhe aller Rasterzellen im 10m-Pixel berechnet.
 
-$$VCI = \frac{-\sum_{i=1}^{n} p_i \ln(p_i)}{\ln(n)}$$
+Dieser Wert wird auch zum Herleiten der modellierten Variablen (04-06) verwendet.
 
-wobei $p_i$ der relative Anteil der Punkte mit einer Höhe zwischen $i-1$ und $i$ Metern ist, und $n = 60$.
+Bei geschlossenen, homogenen Beständen ist der Wert ähnlich zur Bestandesoberhöhe. Bei lückigen Beständen kann die mittlere Höhe jedoch deutlich darunter liegen.
 
-*Was bedeutet das?*
-
-Ein VCI nahe 1 bedeutet, dass die Punkte gleichmäßig über alle Höhenschichten verteilt sind, während ein VCI nahe 0 bedeutet, dass sich alle Punkte auf eine oder wenige Höhenschichten konzentrieren. In der Praxis kann ein hoher VCI sowohl auf eine höhere Gesamthöhe des Bestandes hindeuten, als auch auf eine komplexere Bestandesschichtung z.B. aus Unterstand und Oberstand.
+Die Einheit ist Meter (m). Alle Werte sind auf ganze Meter gerundet.
 
 ## Waldstruktur – 04 Bestandesvorrat
 
@@ -38,7 +38,7 @@ wobei $h$ die mittlere Höhe eines Bestandeshöhenmodells (CHM) ist, $\rho$ das 
 
 Mit Daten der Bundeswaldinventur (BWI) wurde die Modellparameter wie folgt kalibriert:
 
-$$a = 3.4838,    b = 1.3921,    c = -0.76431$$
+$$ a = 4.0544,    b = 1.3323,    c = -0.8135$$
 
 Die Einheit ist Vorratsfestmeter pro Hektar (Vfm/ha).
 
@@ -52,7 +52,7 @@ wobei $h$ die mittlere Höhe eines Bestandeshöhenmodells (CHM) ist, $\rho$ das 
 
 Mit Daten der Bundeswaldinventur (BWI) wurde die Modellparameter wie folgt kalibriert:
 
-$$ a = 4.988,    b = 1.343,    c = 0.3047$$
+$$ a = 6.1050,    b = 1.2453,    c = 0.1845$$
 
 Die Einheit ist Tonne pro Hektar (t/ha).
 
@@ -66,9 +66,16 @@ wobei $h$ die mittlere Höhe eines Bestandeshöhenmodells (CHM) ist, $\rho$ das 
 
 Mit Daten der Bundeswaldinventur (BWI) wurde die Modellparameter wie folgt kalibriert:
 
-$$a = 2.1713, b = 0.75521, c = -0.71128$$
+$$a = 2.3898, b = 0.7129, c = -0.7446$$
 
 Die Einheit ist Quadratmeter pro Hektar (m²/ha).
+
+## Waldstruktur - 07 Vertikale Schichtung
+
+Dieser Wert gibt eine Prognose darüber ab, ob es sich um einen einschichtigen Bestand handelt (1) oder der Bestand zwei- oder mehrschichtig bis plenterartig ist (2).
+
+Die Berechnung erfolgt, indem die vertikale Verteilung der Punkte in der LiDAR-Punktwolke betrachtet wird. Dabei wird für jedes 10m-Pixel die vertikale Punktdichte mit einem Suchfilter von 3 m Höhe berechnet. Hat die Verteilung ein einziges Maximum der Punktdichte, bekommt das Pixel den Wert 1. Hat die Verteilung mehrere lokale Maxima, bekommt das Pixel den Wert 2. Um zu berücksichtigen, dass vertikale Schichtung eine großflächige Eigenschaft ist, wird der so erhaltene Wert anschließend mit einem 3x3-Fenster geglättet: Wenn darin zwei oder mehr Pixel als den Wert 2 hatten, beträgt der finale Wert 2, ansonsten 1. 
+
 
 ## Zur Genauigkeit der modellierten Variablen
 
@@ -82,3 +89,17 @@ panz zwischen BWI-Aufnahme und ALS-Daten, welche in der Regel dadurch entsteht, 
  <img src="plot_metrics_prod_TH_vs_bwi_wo_bad_quality.png" style="width:750px; height:auto;">
 
  <img src="plot_metrics_prod_RLP_vs_bwi_wo_outliers.png" style="width:750px; height:auto;">
+
+
+## Nicht mehr genutzt: Vertical Complexity Index (Bestandesschichtung)
+
+Der Index der vertikalen Komplexität (Vertical Complexity Index, VCI) ist ein Maß für die Gleichmäßigkeit der vertikalen Verteilung der Punkte. Er wird berechnet als Shannon-Wiener-Index über 60 Höhenklassen von je einem Meter:
+
+$$VCI = \frac{-\sum_{i=1}^{n} p_i \ln(p_i)}{\ln(n)}$$
+
+wobei $p_i$ der relative Anteil der Punkte mit einer Höhe zwischen $i-1$ und $i$ Metern ist, und $n = 60$.
+
+*Was bedeutet das?*
+
+Ein VCI nahe 1 bedeutet, dass die Punkte gleichmäßig über alle Höhenschichten verteilt sind, während ein VCI nahe 0 bedeutet, dass sich alle Punkte auf eine oder wenige Höhenschichten konzentrieren. In der Praxis kann ein hoher VCI sowohl auf eine höhere Gesamthöhe des Bestandes hindeuten, als auch auf eine komplexere Bestandesschichtung z.B. aus Unterstand und Oberstand.
+Aufgrund dieser Uneindeutigkeit wurde der VCI durch den binären Schichtungsindikator ersetzt
