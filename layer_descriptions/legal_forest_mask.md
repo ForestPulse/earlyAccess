@@ -1,4 +1,4 @@
-# DLM-Waldmaske (S025)
+# ForestPulse-Waldmaske ()
 
 Die Waldmaske setzt sich aus zwei Teilen des Basis-DLM (ATKIS Basis-DLM) zusammen. Das digitale Landschaftsmodell der deutschen Landesvermessung beschreibt die Landschaft als Vektordaten (Flächen, Linien, Punkte) im Maßstab etwa 1:25.000. Die Lagegenauigkeit liegt bei rund ±3 m. Die Landesvermessungsverwaltungen führen es, das BKG stellt es bundesweit bereit. Es wird laufend fortgeführt, die Bundesdaten erscheinen in regelmäßigen Ständen, deshalb gibt es Jahresstände wie DLM 2018, 2024 und 2025.
 
